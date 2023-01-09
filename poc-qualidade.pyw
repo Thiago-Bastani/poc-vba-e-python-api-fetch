@@ -30,7 +30,7 @@ def atualizarPlanilha():
 
         row = (requestJSON["state"],requestJSON["city"],requestJSON["district"],requestJSON["address"], datetime.datetime.now())
         ws.append(row)
-        # Salvar
+        # Salvar (Alterar caminho)
         wb.save("C:/Users/mathe/OneDrive/Área de Trabalho/Nova pasta/poc-vba-e-python-api-fetch/Controle.xlsx")
         # caso a planilha já exista, inserir nova linha
     else:
@@ -40,7 +40,7 @@ def atualizarPlanilha():
         ws = loadedWb.active
         row = (requestJSON["state"],requestJSON["city"],requestJSON["district"],requestJSON["address"], datetime.datetime.now())
         ws.append(row)
-        # Salvar
+        # Salvar (Alterar caminho)
         loadedWb.save("C:/Users/mathe/OneDrive/Área de Trabalho/Nova pasta/poc-vba-e-python-api-fetch/Controle.xlsx")
 
 schedule.every(2).seconds.do(atualizarPlanilha)
